@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Adherent;
+use App\Form\AdherentType;
+use App\Form\RoleType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -21,6 +24,7 @@ class ContactController extends AbstractController
      */
     public function stripe()
     {
+
         return $this->render('contact/pay.html.twig', [
             'controller_name' => 'ContactController',
         ]);
@@ -28,10 +32,13 @@ class ContactController extends AbstractController
     /**
      * @Route("/register", name="register")
      */
-    public function register()
+    public function inscrire()
     {
-        return $this->render('contact/register.html.twig', [
+        $adherent = new Adherent();
+        $form = $this->createForm(AdherentType::class, $adherent);
+        return $this->render('contact/inscrire.html.twig', [
             'controller_name' => 'ContactController',
+            'createForm' => $form->createView()
         ]);
     }
     /**
@@ -39,8 +46,10 @@ class ContactController extends AbstractController
      */
     public function connect()
     {
+        $form = $this->createForm(RoleType::class);
         return $this->render('contact/connect.html.twig', [
             'controller_name' => 'ContactController',
+            'contactForm' => $form->createView()
         ]);
     }
 }

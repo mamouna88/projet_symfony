@@ -1,7 +1,34 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{% endblock %}
+{% block stylesheet%}{% endblock %}
 
-{% block body %}
+{% block body %}<body>
+<div class="btn">
+    <a href="{{ path('connect') }}" ><button type="submit" class="btn btn-dark mb-2">Connexion</button></a>
+</div>
 
+
+<style>
+    body {
+        background-image: url("{{ asset('logo1.jpg') }}") ;
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+        background-position: 0% 80%;
+        background-size: 65em;
+        z-index: 1;
+
+    }
+
+.btn {
+    z-index: 7;
+    position: relative;
+    left:35em;
+}
+
+
+
+    </style>
+
+    </body>
 {% endblock %}

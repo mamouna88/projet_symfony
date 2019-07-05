@@ -1,7 +1,73 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{% endblock %}
+{% block body %}{% block stylesheet %}<link rel="stylesheet" href="{{ asset('css/contact.css') }}" >{% endblock %}
+    <style>
 
-{% block body %}
+        .cadre {
+            margin-left: 500px;
+            position: relative;
+            width: 16em;
+            overflow: hidden;
+            line-height: 2em;
+        }
+        .cadre i {
+            z-index: 1;
+            position: relative;
+            width: 2em;
+        }
+        .cadre span {
+            display: block;
+            position: absolute;
+            left: -50em;
+            padding: 0 .25em;
+            color: black;
+            background: transparent;
+            transition: all .5s;
+        }
+        .cadre:hover span {
+            left: 7em;
+        }
+        .cadre2 {
+            margin-top: -120px;
+            right: -20em;
+            position: relative;
+            width: 16em;
+            overflow: hidden;
+            line-height: 2em;
+        }
+        .cadre2 i {
+            z-index: 1;
+            position: relative;
+            width: 2em;
+        }
+        .cadre2 span {
+            display: block;
+            position: absolute;
+            right: 370%;
+            padding: 0 .25em;
+            color: black;
+            background: transparent;
+            transition: all .5s;
+        }
+        .cadre2:hover span {
+            right: 1em;
+        }
+        .container {
+
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <h1>N'hésitez pas à nous contacter</h1>
+    <body class="container"><div class="cadre">
+        <span>amn@pfe.fr</span>
+        <i class="far fa-envelope fa-7x"></i></div>
+
+    <div class="cadre2"><span>0801000001</span>
+        <i class="fas fa-phone fa-7x"></i></div></body>
 
 {% endblock %}

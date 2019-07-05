@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+
+
+{% block body %}<style>
+    body {
+        background: lightyellow;
+        padding-bottom: 20px;
+
+    }
+</style>
+    <br><br>
+    <a href="{{ path('connect') }}"><button type="submit" class="btn btn-secondary mb-2">Connexion</button></a>
+    <h1 align="center">Veuillez vous inscrire</h1>
+
+    {{ form_start(createForm) }}
+        {{ form_widget(createForm) }}
+    {{ form_end(createForm) }}
+
+{% endblock %}
