@@ -1,3 +1,13 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+school_grade_detail:
+  path: /grade/{section}/{grade}
+  controller: App\Controller\GradeController::detail
+  requirements:
+    grade: \d{1}
+    section: "[a-zA-Z]+"
+
+fos_user:
+      resource: "@FOSUserBundle/Resources/config/routing/all.xml"
